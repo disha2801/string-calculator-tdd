@@ -9,3 +9,8 @@ public class StringCalculatorTest {
         assertEquals(0, calc.add(""));
     }
 }
+@Test
+    public void testSingleNumber() {
+        StringCalculator calc = new StringCalculator();
+        assertEquals(1, calc.add("1"));
+    }
