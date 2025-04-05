@@ -19,5 +19,20 @@ test {
 }
 
 application {
-    mainClass = '' // Optional, leave blank if you're not building a CLI app
+    mainClass = '' 
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += "--enable-preview"
+}
+
+test {
+    jvmArgs += "--enable-preview"
+    useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) 
+    }
 }

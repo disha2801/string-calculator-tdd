@@ -8,8 +8,8 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(0, calc.add(""));
     }
-}
-@Test
+
+    @Test
     public void testSingleNumber() {
         StringCalculator calc = new StringCalculator();
         assertEquals(1, calc.add("1"));
@@ -20,3 +20,10 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(6, calc.add("1,5"));
     }
+    @Test
+public void testCustomDelimiter() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(3, calc.add("//;\n1;2"));
+}
+}
+
